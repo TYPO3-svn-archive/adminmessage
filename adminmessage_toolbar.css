@@ -1,0 +1,56 @@
+
+#tx-adminmessage-toolbar-menu {
+	width: 30px;
+}
+
+#tx-adminmessage-toolbar-menu ul {
+	position: absolute;
+	list-style: none;
+	/*padding: 2px 0px 0px;*/
+	padding:3px;
+	margin: 0px;
+	background-color: #f9f9f9;
+	border: 1px solid #abb2bc;
+	border-top: none;
+	width: 400px;
+
+}
+
+#tx-adminmessage-toolbar-menu li {
+	padding-top: 2px;
+	padding-left: 2px;
+	text-align: left;
+	float: none;
+	vertical-align: middle;
+	min-height: 19px;
+}
+* html #tx-adminmessage-toolbar-menu li {
+	height: 19px;
+}
+
+#tx-adminmessage-toolbar-menu li img {
+	float: left;
+	padding-right: 3px;
+	cursor:pointer;
+}
+
+#tx-adminmessage-toolbar-menu li a {
+	text-decoration: none;
+	line-height: 12px;
+	vertical-align: middle;
+	display: block;
+	padding-bottom: 2px;
+	padding-left: 3px;
+	font-size: 11px;
+}
+
+
+#tx-adminmessage-toolbar-menu li .subject {
+		font-weight: bold;
+		display: inline;
+}
+
+#tx-adminmessage-toolbar-menu li .datetime {
+		font-style: italic;
+		display: inline;
+}

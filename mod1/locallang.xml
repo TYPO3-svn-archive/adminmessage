@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for module &quot;tools_txadminmessageM1&quot;</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="title">Admin Messages</label>
+			<label index="function1">New Message</label>
+			<label index="function2">List Messages</label>
+			<label index="function3">Function #3</label>
+			<label index="send_new_message">Send new message</label>
+			<label index="subject">Subject</label>
+			<label index="subject_blank">Please enter a subject.</label>
+			<label index="message">Message</label>
+			<label index="message_blank">Please enter a message.</label>
+			<label index="send_message">Send Message</label>
+			<label index="clear">Clear</label>
+			<label index="sending_message">Sending Message...</label>
+			<label index="success">Success</label>
+			<label index="success_text">Message has been sent.</label>
+			<label index="failed">Failed</label>
+			<label index="failed_text">For some reason your message could not be sent. Please contact your adminstrator if this problem is persistent.</label>
+			<label index="startdate">Start Date</label>
+			<label index="startdate_blank">Please select a start date.</label>
+			<label index="starttime">Start Time</label>
+			<label index="starttime_blank">Please select a start time.</label>
+			<label index="enddate">End Date</label>
+			<label index="enddate_blank">Please select an end date.</label>
+			<label index="endtime">End Time</label>
+			<label index="endtime_blank">Please select an end time.</label>
+
+			<label index="extjs_timeformat">H:i</label>
+			<label index="extjs_dateformat">j/m/Y</label>
+		</languageKey>
+	</data>
+</T3locallang>
