@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for adminmessage toolbar</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="title">Admin Messages</label>
+			<label index="loading">Loading...</label>
+			<label index="extjs_date_format">Y-m-d H:i:m</label>
+		</languageKey>
+	</data>
+</T3locallang>
