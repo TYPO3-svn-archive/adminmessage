@@ -131,8 +131,8 @@ Ext.ux.TYPO3.tx_adminmessage_toolbar = Ext.extend(Ext.util.Observable, {
 						var date = new Date(parseInt(message.crdate)*1000);
 						
 						var html = '\
-<img src="../typo3conf/ext/adminmessage/delete.gif" width="11" height="12" alt="' + TYPO3.getLL('remove', 'adminmessage_toolbar') + '" title="' + TYPO3.getLL('remove', 'adminmessage_toolbar') + '" />\
-<div class="datetime">[' + date.format(TYPO3.getLL('extjs_date_format', 'adminmessage_toolbar')) + ']</div>\
+<img src="../typo3conf/ext/adminmessage/delete.gif" width="11" height="12" alt="' + TYPO3.jslang.getLL('remove', 'adminmessage_toolbar') + '" title="' + TYPO3.jslang.getLL('remove', 'adminmessage_toolbar') + '" />\
+<div class="datetime">[' + date.format(TYPO3.jslang.getLL('extjs_date_format', 'adminmessage_toolbar')) + ']</div>\
 <div class="subject"> ' + message.subject + '</div>\
 <div class="message">' + Ext.util.Format.nl2br(message.message) + '</div>';
 						
@@ -209,7 +209,7 @@ Ext.ux.TYPO3.tx_adminmessage_toolbar = Ext.extend(Ext.util.Observable, {
 				Ext.get(Ext.query('#tx-adminmessage-toolbar-menu .toolbar-item-menu')[0]).setStyle({
 						left: calculatedOffset + 'px'
 				});
-		},
+		}
 				
 });
 

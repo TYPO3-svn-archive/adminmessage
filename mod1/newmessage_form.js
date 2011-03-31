@@ -6,14 +6,14 @@ Ext.onReady(function() {
 
 		var get_timestamp =  function(dateField, timeField) {
 				var d_date = new Date(dateField.getValue());
-				var t_date = Date.parseDate(timeField.getRawValue(), TYPO3.getLL('extjs_timeformat','adminmessage'));
+				var t_date = Date.parseDate(timeField.getRawValue(), TYPO3.jslang.getLL('extjs_timeformat','adminmessage'));
 				return d_date.getTime()+t_date.getTime()-t_date.clearTime(true).getTime();
 		}
 		
 		var messageForm = new Ext.form.FormPanel({
 				url:'ajax.php',
 				renderTo:'newmessage',
-				title: TYPO3.getLL('send_new_message','adminmessage'),
+				title: TYPO3.jslang.getLL('send_new_message','adminmessage'),
 				width:500,
 				bodyStyle: 'padding:10px;',
 				frame:true,
@@ -32,10 +32,10 @@ Ext.onReady(function() {
 																xtype: 'jsonstore',
 																url:'ajax.php',
 																baseParams: {
-																		ajaxID: 'tx_adminmessage_mod1::getGroups',
+																		ajaxID: 'tx_adminmessage_mod1::getGroups'
 																},
 																root: 'groups',
-																fields: [{name:'uid', type: 'int'}, 'title'],
+																fields: [{name:'uid', type: 'int'}, 'title']
 														},
 														displayField:'title',
 														valueField:'uid',
@@ -48,8 +48,8 @@ Ext.onReady(function() {
 														listeners: {
 																select: function() {
 																		messageForm.findById('to-user').clearValue();
-																},
-														},
+																}
+														}
 												}]
 								},{
 										columnWidth: 0.35,
@@ -61,10 +61,10 @@ Ext.onReady(function() {
 																xtype: 'jsonstore',
 																url:'ajax.php',
 																baseParams: {
-																		ajaxID: 'tx_adminmessage_mod1::getUsers',
+																		ajaxID: 'tx_adminmessage_mod1::getUsers'
 																},
 																root: 'users',
-																fields: [{name:'uid', type: 'int'}, 'username'],
+																fields: [{name:'uid', type: 'int'}, 'username']
 																//autoLoad: true,
 														},
 														//mode: 'local',
@@ -82,8 +82,8 @@ Ext.onReady(function() {
 														listeners: {
 																select: function() {
 																		messageForm.findById('to-group').clearValue();
-																},
-														},
+																}
+														}
 												}]
 
 								},{
@@ -96,27 +96,27 @@ Ext.onReady(function() {
 																click: function() {
 																		messageForm.findById('to-group').clearValue();
 																		messageForm.findById('to-user').clearValue();
-																},
+																}
 														},
 														text: 'Clear selection',
-														fieldLabel: 'To all',
+														fieldLabel: 'To all'
 														/*style: {
 																paddingTop: '15px',
 														},*/
-												},
-										],
-								}],
+												}
+										]
+								
 								
 						},
 						
 						{
 								xtype:'textfield',
 								id:'subject',
-								fieldLabel: TYPO3.getLL('subject','adminmessage'),
+								fieldLabel: TYPO3.jslang.getLL('subject','adminmessage'),
 								width:275,
 								allowBlank:false,
-								blankText: TYPO3.getLL('subject_blank','adminmessage'),
-								anchor:'95%',
+								blankText: TYPO3.jslang.getLL('subject_blank','adminmessage'),
+								anchor:'95%'
 								//vtype:'email',
 								//vtypeText:'Enter a subject'
 						},
@@ -124,18 +124,18 @@ Ext.onReady(function() {
 								xtype:'textarea',
 								//xtype:'htmleditor',
 								id:'message',
-								fieldLabel: TYPO3.getLL('message','adminmessage'),
+								fieldLabel: TYPO3.jslang.getLL('message','adminmessage'),
 								width:275,
 								height:200,
 								allowBlank:false,
-								blankText: TYPO3.getLL('message_blank','adminmessage'),
+								blankText: TYPO3.jslang.getLL('message_blank','adminmessage'),
 								anchor:'95%',
 								enableAlignments: false,
 								enableColors: false,
 								enableFont: false,
 								enableFontSize: false,
 								enableLists: false,
-								enableSourceEdit: false,
+								enableSourceEdit: false
 
 						}, {
 								layout: 'column',
@@ -147,13 +147,13 @@ Ext.onReady(function() {
 														xtype:'datefield',
 														id:'startdate',
 														name:'startdate',
-														fieldLabel: TYPO3.getLL('startdate','adminmessage'),
+														fieldLabel: TYPO3.jslang.getLL('startdate','adminmessage'),
 														allowBlank:false,
-														blankText: TYPO3.getLL('startdate_blank','adminmessage'),
+														blankText: TYPO3.jslang.getLL('startdate_blank','adminmessage'),
 														value: new Date(),
 														anchor:'90%',
 														//submitValue: false,
-														format: TYPO3.getLL('extjs_dateformat','adminmessage'),
+														format: TYPO3.jslang.getLL('extjs_dateformat','adminmessage')
 														//hiddenName: 'morten', not working
 														/*listeners: {
 																select: function(datefield, newValue, oldValue) {
@@ -161,9 +161,9 @@ Ext.onReady(function() {
 																		start.setValue(start.getValue()-)
 																},
 														},*/
-												},
+												}
 
-										],
+										]
 								},{
 										columnWidth: 0.5,
 										layout: 'form',
@@ -171,15 +171,15 @@ Ext.onReady(function() {
 												{
 														xtype:'timefield',
 														id:'starttime',
-														fieldLabel: TYPO3.getLL('starttime','adminmessage'),
+														fieldLabel: TYPO3.jslang.getLL('starttime','adminmessage'),
 														allowBlank:false,
-														blankText: TYPO3.getLL('starttime_blank','adminmessage'),
+														blankText: TYPO3.jslang.getLL('starttime_blank','adminmessage'),
 														value: new Date(),
 														anchor:'90%',
 														submitValue: false,
-														format: TYPO3.getLL('extjs_timeformat','adminmessage'),
-												},
-										],
+														format: TYPO3.jslang.getLL('extjs_timeformat','adminmessage')
+												}
+										]
 
 								}]
 						},
@@ -193,16 +193,16 @@ Ext.onReady(function() {
 												{
 														xtype:'datefield',
 														id:'enddate',
-														fieldLabel: TYPO3.getLL('enddate','adminmessage'),
+														fieldLabel: TYPO3.jslang.getLL('enddate','adminmessage'),
 														//allowBlank:false,
-														blankText: TYPO3.getLL('enddate_blank','adminmessage'),
+														blankText: TYPO3.jslang.getLL('enddate_blank','adminmessage'),
 														//value: new Date(),
 														anchor:'90%',
 														submitValue: false,
-														format: TYPO3.getLL('extjs_dateformat','adminmessage'),
-												},
+														format: TYPO3.jslang.getLL('extjs_dateformat','adminmessage')
+												}
 
-										],
+										]
 								},{
 										columnWidth: 0.5,
 										layout: 'form',
@@ -210,15 +210,15 @@ Ext.onReady(function() {
 												{
 														xtype:'timefield',
 														id:'endtime',
-														fieldLabel: TYPO3.getLL('endtime','adminmessage'),
+														fieldLabel: TYPO3.jslang.getLL('endtime','adminmessage'),
 														//allowBlank:false,
-														blankText: TYPO3.getLL('endtime_blank','adminmessage'),
+														blankText: TYPO3.jslang.getLL('endtime_blank','adminmessage'),
 														//value: new Date(),
 														anchor:'90%',
 														submitValue: false,
-														format: TYPO3.getLL('extjs_timeformat','adminmessage'),
-												},
-										],
+														format: TYPO3.jslang.getLL('extjs_timeformat','adminmessage')
+												}
+										]
 
 								}]
 						},
@@ -226,28 +226,28 @@ Ext.onReady(function() {
 						{
 								xtype:'hidden',
 								id:'ajaxID',
-								value:'tx_adminmessage_mod1::sendMessage',
+								value:'tx_adminmessage_mod1::sendMessage'
 						},
 						{
 								xtype:'hidden',
-								id: 'start',
+								id: 'start'
 						},
 						{
 								xtype:'hidden',
-								id: 'end',
-						},
+								id: 'end'
+						}
 						
 				],
 				buttons: [
 						{
-								text: TYPO3.getLL('clear','adminmessage'),
+								text: TYPO3.jslang.getLL('clear','adminmessage'),
 								handler: function () {
 										// when this button clicked, reset this form
 										messageForm.getForm().reset();
 								}
 
 						},{ 
-								text: TYPO3.getLL('send_message','adminmessage'),
+								text: TYPO3.jslang.getLL('send_message','adminmessage'),
 								handler: function () {
 										// when this button clicked, sumbit this form
 										if(messageForm.getForm().isValid()) {
@@ -255,7 +255,7 @@ Ext.onReady(function() {
 												messageForm.findById('start').setValue(get_timestamp(messageForm.findById('startdate'), messageForm.findById('starttime')));
 
 												/*var enddate = new Date(messageForm.findById('enddate').getValue());
-												var endtime = Date.parseDate(messageForm.findById('endtime').getRawValue(), TYPO3.getLL('extjs_timeformat','adminmessage'));*/
+												var endtime = Date.parseDate(messageForm.findById('endtime').getRawValue(), TYPO3.jslang.getLL('extjs_timeformat','adminmessage'));*/
 												var enddate = messageForm.findById('enddate');
 												var endtime = messageForm.findById('endtime');
 												if(enddate.getValue()) {
@@ -267,21 +267,22 @@ Ext.onReady(function() {
 												}
 												
 												messageForm.getForm().submit({
-														waitMsg: TYPO3.getLL('sending_message','adminmessage'),		// Wait Message
+														waitMsg: TYPO3.jslang.getLL('sending_message','adminmessage'),		// Wait Message
 														success: function () {		// When saving data success
-																Ext.MessageBox.alert (TYPO3.getLL('success','adminmessage'), TYPO3.getLL('success_text','adminmessage'));
+																Ext.MessageBox.alert (TYPO3.jslang.getLL('success','adminmessage'), TYPO3.jslang.getLL('success_text','adminmessage'));
 																// clear the form
 																messageForm.getForm().reset();
 														},
 														failure: function () {		// when saving data failed
-																Ext.MessageBox.alert (TYPO3.getLL('failed','adminmessage'), TYPO3.getLL('failed_text','adminmessage'));
+																Ext.MessageBox.alert (TYPO3.jslang.getLL('failed','adminmessage'), TYPO3.jslang.getLL('failed_text','adminmessage'));
 														}
 												});
 										}
 								}
 
-						},
-				],
+						}
+				]
+			}]
 		});
 
 
